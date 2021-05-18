@@ -1,0 +1,94 @@
+openapi: 3.0.3
+info:
+  title: Foo Service
+  version: "1.0"
+servers:
+- url: http://localhost:80
+  description: Default server for foo
+paths:
+  /foo1:
+    options:
+      tags:
+      - foo
+      summary: fooOptions foo
+      operationId: foo#fooOptions
+      responses:
+        "200":
+          description: OK response.
+    post:
+      tags:
+      - foo
+      summary: foo1 foo
+      operationId: foo#foo1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: integer
+              example: 3004753918163907551
+              format: int64
+            example: 4530605782497482443
+      responses:
+        "200":
+          description: OK response.
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 3379160006528351262
+                format: int64
+              example: 3714141415529535030
+  /foo2:
+    post:
+      tags:
+      - foo
+      summary: foo2 foo
+      operationId: foo#foo2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: integer
+              example: 586135409417583634
+              format: int64
+            example: 7457751564068708626
+      responses:
+        "200":
+          description: OK response.
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 1621221628978342811
+                format: int64
+              example: 1530148370356572643
+  /foo3:
+    post:
+      tags:
+      - foo
+      summary: foo3 foo
+      operationId: foo#foo3
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: integer
+              example: 8081080940296319461
+              format: int64
+            example: 755500405374527078
+      responses:
+        "200":
+          description: OK response.
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 5388648488683433546
+                format: int64
+              example: 8441100104663189690
+components: {}
+tags:
+- name: foo
