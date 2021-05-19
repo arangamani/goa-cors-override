@@ -116,9 +116,9 @@ func customOptionsHandler(ch http.Handler, fh http.Handler) http.HandlerFunc {
 	corsHandler := ch.(http.HandlerFunc)
 	 fooHandler := fh.(http.HandlerFunc)
 	return func(w http.ResponseWriter, r *http.Request) {
-		// As an example, here we route it based on the presence of the Origin header. It can even
-		// be based on the request path or other request properties.
-		if r.Method == http.MethodOptions && r.Header.Get("Origin") == "" {
+		// As an example, here we route it based on the presence of the Access-Control-Request-Method header.
+		// It can even be based on the request path or other request properties.
+		if r.Method == http.MethodOptions && r.Header.Get("Access-Control-Request-Method") == "" {
 			fmt.Printf("Routing to custom CORS handler because no Origin header is present\n")
 			fooHandler(w, r)
 			return
